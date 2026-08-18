@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounika Fashion</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #e3e6e6;
+        }
+
+        /* ================= TOP HEADER ================= */
+
+        .top-header {
+            height: 70px;
+            background: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            width: 150px;
+        }
+
+        .logo span {
+            color: #ff9900;
+        }
+
+        .location {
+            font-size: 13px;
+            width: 210px;
+        }
+
+        .location strong {
+            font-size: 16px;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            display: flex;
+            height: 42px;
+            flex: 1;
+            max-width: 650px;
+        }
+
+        .search-category {
+            width: 65px;
+            border: none;
+            background: #e6e6e6;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            width: 60px;
+            border: none;
+            background: #febd69;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background: #f3a847;
+        }
+
+        /* ================= ACCOUNT ================= */
+
+        .account,
+        .orders {
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .account strong,
+        .orders strong {
+            font-size: 15px;
+        }
+
+        .cart {
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        #cartCount {
+            color: #ff9900;
+            font-size: 20px;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 52px;
+            background: #232f3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            padding: 0 25px;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        .navbar div {
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .navbar div:hover {
+            border: 1px solid white;
+            padding: 10px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            height: 390px;
+            background: linear-gradient(
+                90deg,
+                #2e8b57,
+                #3ca35b,
+                #238b45
+            );
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 45px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 42%;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .shop-btn {
+            background: #ff9900;
+            color: black;
+            border: none;
+            padding: 13px 25px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .shop-btn:hover {
+            background: #ffb000;
+        }
+
+        .fashion-images {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .fashion-images img {
+            width: 170px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 45%;
+            font-size: 55px;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .left-arrow {
+            left: 20px;
+        }
+
+        .right-arrow {
+            right: 20px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            padding: 25px;
+            margin-top: -20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .product-card {
+            background: white;
+            padding: 20px;
+            min-height: 320px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .product-card h2 {
+            font-size: 23px;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .product {
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: 115px;
+            object-fit: cover;
+        }
+
+        .product p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .view-all {
+            display: block;
+            color: #007185;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .view-all:hover {
+            color: #c45500;
+            text-decoration: underline;
+        }
+
+        /* ================= FASHION SECTION ================= */
+
+        .fashion-section {
+            background: white;
+            margin: 0 25px 25px;
+            padding: 25px;
+        }
+
+        .fashion-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .fashion-products {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+        }
+
+        .fashion-product {
+            min-width: 190px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            background: white;
+        }
+
+        .fashion-product img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .fashion-product h3 {
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 19px;
+            font-weight: bold;
+            color: #b12704;
+        }
+
+        .add-cart {
+            width: 100%;
+            margin-top: 10px;
+            padding: 9px;
+            background: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .add-cart:hover {
+            background: #f7ca00;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .back-top {
+            background: #37475a;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            cursor: pointer;
+        }
+
+        .footer {
+            background: #232f3e;
+            color: white;
+            padding: 45px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            color: #ddd;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .copyright {
+            background: #131a22;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 1000px) {
+
+            .location,
+            .account,
+            .orders {
+                display: none;
+            }
+
+            .products-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .fashion-images img {
+                width: 120px;
+                height: 220px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .top-header {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px;
+            }
+
+            .logo {
+                width: auto;
+            }
+
+            .search-box {
+                order: 5;
+                width: 100%;
+            }
+
+            .navbar {
+                overflow-x: auto;
+            }
+
+            .hero {
+                height: 450px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .fashion-images {
+                width: 100%;
+            }
+
+            .fashion-images img {
+                width: 100px;
+                height: 160px;
+            }
+
+            .products-container {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+
+            .footer {
+                grid-template-columns: 1fr 1fr;
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+    <div class="logo">
+        MOUNIKA<span>FASHION</span>
+    </div>
+
+    <div class="location">
+        📍 Delivering to Hyderabad 500048
+        <br>
+        <strong>Update location</strong>
+    </div>
+
+
+    <div class="search-box">
+
+        <select class="search-category">
+            <option>All</option>
+            <option>Women</option>
+            <option>Men</option>
+            <option>Kids</option>
+            <option>Shoes</option>
+            <option>Bags</option>
+        </select>
+
+        <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search Mounika Fashion"
+        >
+
+        <button
+            class="search-button"
+            onclick="searchProduct()">
+            🔍
+        </button>
+
+    </div>
+
+
+    <div class="account">
+        Hello, sign in
+        <br>
+        <strong>Account & Lists ▾</strong>
+    </div>
+
+
+    <div class="orders">
+        Returns
+        <br>
+        <strong>& Orders</strong>
+    </div>
+
+
+    <div class="cart" onclick="showCart()">
+        🛒
+        <span id="cartCount">0</span>
+        Cart
+    </div>
+
+</header>
+
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar">
+
+    <div>☰ All</div>
+    <div>Fresh ▾</div>
+    <div>Prime Video</div>
+    <div>Sell</div>
+    <div>Bestsellers</div>
+    <div>Today's Deals</div>
+    <div>Customer Service</div>
+    <div>Mobiles</div>
+    <div>New Releases</div>
+    <div>Prime ▾</div>
+    <div>Amazon Pay</div>
+    <div>Electronics</div>
+    <div>Home & Kitchen</div>
+    <div>Fashion</div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div
+        class="arrow left-arrow"
+        onclick="previousSlide()">
+        ❮
+    </div>
+
+
+    <div class="hero-content">
+
+        <h1 id="heroTitle">
+            Starting ₹299
+        </h1>
+
+        <p id="heroText">
+            Deals on fashion & beauty
+        </p>
+
+        <button class="shop-btn">
+            SHOP NOW
+        </button>
+
+    </div>
+
+
+    <div class="fashion-images">
+
+        <img
+            src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=80"
+            alt="Fashion">
+
+        <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80"
+            alt="Fashion">
+
+        <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=80"
+            alt="Fashion">
+
+    </div>
+
+
+    <div
+        class="arrow right-arrow"
+        onclick="nextSlide()">
+        ❯
+    </div>
+
+</section>
+
+
+
+<!-- ================= DEAL CARDS ================= -->
+
+<section class="products-container">
+
+
+    <!-- CARD 1 -->
+
+    <div class="product-card">
+
+        <h2>
+            Appliances for your home |
+            Up to 55% off
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80">
+
+                <p>
+                    Air conditioners
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=400&q=80">
+
+                <p>
+                    Refrigerators
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="view-all">
+            See all deals
+        </span>
+
+    </div>
+
+
+
+    <!-- CARD 2 -->
+
+    <div class="product-card">
+
+        <h2>
+            Starting ₹49 |
+            Deals on home essentials
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=400&q=80">
+
+                <p>
+                    Cleaning supplies
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=400&q=80">
+
+                <p>
+                    Bathroom accessories
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="view-all">
+            Explore more
+        </span>
+
+    </div>
+
+
+
+    <!-- CARD 3 -->
+
+    <div class="product-card">
+
+        <h2>
+            Starting ₹199 |
+            Fashion & Home
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80">
+
+                <p>
+                    Fashion
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80">
+
+                <p>
+                    Home products
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="view-all">
+            Shop now
+        </span>
+
+    </div>
+
+
+
+    <!-- CARD 4 -->
+
+    <div class="product-card">
+
+        <h2>
+            Up to 75% off |
+            Deals on headphones
+        </h2>
+
+        <div class="product-grid">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80">
+
+                <p>
+                    Headphones
+                </p>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=500&q=80">
+
+                <p>
+                    Earphones
+                </p>
+
+            </div>
+
+        </div>
+
+        <span class="view-all">
+            See all products
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= POPULAR PRODUCTS ================= -->
+
+<section class="fashion-section">
+
+    <h2>
+        Popular Fashion Products
+    </h2>
+
+
+    <div class="fashion-products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="fashion-product">
+
+            <img
+                src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80">
+
+            <h3>
+                Women's Stylish Dress
+            </h3>
+
+            <div class="price">
+                ₹499
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="fashion-product">
+
+            <img
+                src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80">
+
+            <h3>
+                Traditional Saree
+            </h3>
+
+            <div class="price">
+                ₹799
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="fashion-product">
+
+            <img
+                src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=400&q=80">
+
+            <h3>
+                Men's Casual Shirt
+            </h3>
+
+            <div class="price">
+                ₹599
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="fashion-product">
+
+            <img
+                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=400&q=80">
+
+            <h3>
+                Stylish Handbag
+            </h3>
+
+            <div class="price">
+                ₹699
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="fashion-product">
+
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80">
+
+            <h3>
+                Women's Shoes
+            </h3>
+
+            <div class="price">
+                ₹899
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="fashion-product">
+
+            <img
+                src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=400&q=80">
+
+            <h3>
+                Fashion Jewellery
+            </h3>
+
+            <div class="price">
+                ₹299
+            </div>
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<div
+    class="back-top"
+    onclick="backToTop()">
+
+    Back to top ↑
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+
+    <div>
+
+        <h3>
+            Get to Know Us
+        </h3>
+
+        <p>
+            About Us
+        </p>
+
+        <p>
+            Careers
+        </p>
+
+        <p>
+            Contact Us
+        </p>
+
+        <p>
+            Mounika Fashion
+        </p>
+
+    </div>
+
+
+
+    <div>
+
+        <h3>
+            Make Money with Us
+        </h3>
+
+        <p>
+            Sell on our website
+        </p>
+
+        <p>
+            Become an Affiliate
+        </p>
+
+        <p>
+            Advertise Your Products
+        </p>
+
+        <p>
+            Become a Seller
+        </p>
+
+    </div>
+
+
+
+    <div>
+
+        <h3>
+            Customer Service
+        </h3>
+
+        <p>
+            Help Center
+        </p>
+
+        <p>
+            Returns
+        </p>
+
+        <p>
+            Shipping
+        </p>
+
+        <p>
+            Your Account
+        </p>
+
+    </div>
+
+
+
+    <div>
+
+        <h3>
+            Let Us Help You
+        </h3>
+
+        <p>
+            Your Orders
+        </p>
+
+        <p>
+            Delivery Information
+        </p>
+
+        <p>
+            Privacy
+        </p>
+
+        <p>
+            Terms & Conditions
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+
+<div class="copyright">
+
+    © 2026 Mounika Fashion | All Rights Reserved
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /* CART */
+
+    let cartCount = 0;
+
+
+    function addToCart() {
+
+        cartCount++;
+
+        document.getElementById("cartCount").innerText =
+            cartCount;
+
+        alert(
+            "Product added to cart! 🛒"
+        );
+    }
+
+
+
+    function showCart() {
+
+        if (cartCount === 0) {
+
+            alert(
+                "Your cart is empty!"
+            );
+
+        } else {
+
+            alert(
+                "You have " +
+                cartCount +
+                " item(s) in your cart."
+            );
+
+        }
+
+    }
+
+
+
+    /* SEARCH */
+
+    function searchProduct() {
+
+        let search =
+            document.getElementById(
+                "searchInput"
+            ).value;
+
+        if (search.trim() === "") {
+
+            alert(
+                "Please enter a product name."
+            );
+
+        } else {
+
+            alert(
+                "Searching for: " +
+                search
+            );
+
+        }
+
+    }
+
+
+
+    /* BACK TO TOP */
+
+    function backToTop() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    /* HERO SLIDER */
+
+    let slide = 0;
+
+    const slides = [
+
+        {
+            title: "Starting ₹299",
+            text: "Deals on fashion & beauty"
+        },
+
+        {
+            title: "Starting ₹499",
+            text: "Amazing deals on women's fashion"
+        },
+
+        {
+            title: "Starting ₹199",
+            text: "Best deals on bags & accessories"
+        }
+
+    ];
+
+
+    function showSlide() {
+
+        document.getElementById(
+            "heroTitle"
+        ).innerText =
+            slides[slide].title;
+
+
+        document.getElementById(
+            "heroText"
+        ).innerText =
+            slides[slide].text;
+
+    }
+
+
+
+    function nextSlide() {
+
+        slide++;
+
+        if (slide >= slides.length) {
+
+            slide = 0;
+
+        }
+
+        showSlide();
+
+    }
+
+
+
+    function previousSlide() {
+
+        slide--;
+
+        if (slide < 0) {
+
+            slide =
+                slides.length - 1;
+
+        }
+
+        showSlide();
+
+    }
+
+
+
+    /* AUTOMATIC SLIDER */
+
+    setInterval(
+        nextSlide,
+        4000
+    );
+
+</script>
+
+
+</body>
+</html>
